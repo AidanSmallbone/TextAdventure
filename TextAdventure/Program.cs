@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -281,6 +282,12 @@ namespace TextAdventure
 
         static void Main(string[] args) //All methods are called here, as well as some of the logic that only needs to happen once
         {
+            SoundPlayer backgroundMusic = new SoundPlayer(); //plays background music
+            backgroundMusic.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "\\theme.wav";
+            backgroundMusic.PlayLooping();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
             beginning:
             
             scene scene = new scene(); //object to call scene methods
